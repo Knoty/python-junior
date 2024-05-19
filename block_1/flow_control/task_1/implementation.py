@@ -3,4 +3,8 @@ def get_numbers():
 
     Returns: итерируемый объект с нужными числами
     """
-    raise NotImplementedError
+    arr = []
+    for el in range(1000, 2001):
+        if all([el % 7 == 0, el % 5 != 0]):
+            arr.append(el)
+    return arr
