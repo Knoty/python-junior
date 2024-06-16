@@ -13,5 +13,18 @@ def open_and_close_file(file_path):
     ###
     # Добавьте свой код сюда
     ###
+
+    # region свой код
+    def default_open(path, mode):
+        import builtins
+        return builtins.open(path, mode)
+
+    def correct_open():
+        nonlocal open
+        open = default_open
+
+    correct_open()
+    # endregion
+    
     f = open(file_path, 'r')
     f.close()
