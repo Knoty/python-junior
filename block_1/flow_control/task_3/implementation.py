@@ -12,11 +12,11 @@ def get_days_count_by_month(month, year=datetime.now().year):
 
     Returns: количество дней
     """
-    long_months = ['январь', 'март', 'май', 'июль', 'август', 'октябрь', 'декабрь', 1, 3, 5, 7, 8, 10, 12]
-    short_months = ['апрель', 'июнь', 'сентябрь', 'ноябрь', 4, 6, 9, 11]
-    if month in long_months:
+    long_months = {'январь': 1, 'март': 3, 'май': 5, 'июль': 7, 'август': 8, 'октябрь': 10, 'декабрь': 12}
+    short_months = {'апрель': 4, 'июнь': 6, 'сентябрь': 9, 'ноябрь': 11}
+    if month in long_months or month in long_months.values():
         return 31
-    elif month in short_months:
+    elif month in short_months or month in short_months.values():
         return 30
     elif month == 'февраль' or month == 2:
         return feb_number_days(year)
